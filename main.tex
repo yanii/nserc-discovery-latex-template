@@ -1,0 +1,175 @@
+% !TEX root = main.tex
+%% -----------------------------------------------------
+%% Sample free form document written in NSERC format
+%%
+%% Declare the document as "nserc-appendix"; use either 11 or 12pt
+%% fonts, and specify whether the document is in French or English
+%% -----------------------------------------------------
+\documentclass[12pt,english]{nserc-appendix}
+
+%%
+%% Body text in a minimum 12 pt Times New Roman font
+%% Single-spaced, with no more than 6 lines of type per inch
+%% All margins set at a minimum of 3/4" (1.87 cm)
+%% Your file must meet the following specifications:
+%% PDF format (.pdf extension); unprotected
+%% Maximum file size of 10 mb
+%% 8 ½" x 11" (216 mm x 279 mm) or A4 (210 mm x 297 mm)
+%% Maximum 5 pages
+
+%% --------------------------
+%% Inclusion of a basic configuration file. Go see this file: there are
+%% parameters (such as your name, etc.) to fill in. This avoids repeating
+%% the same info in the case you produce multiple documents for the same
+%% application.
+%% --------------------------
+\input{application-config.tex}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\newfontfamily\titlefont{Times New Roman}
+\defaultfontfeatures{Ligatures=TeX}
+
+\usepackage[inline,shortlabels]{enumitem}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[font=small]{caption}
+\usepackage[style=numeric,sorting=none,giveninits=true,maxcitenames=1,maxbibnames=99,url=false,doi=false,eprint=false,citestyle=numeric,defernumbers=true,natbib=true,backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage[moderate]{savetrees}
+
+% CCV Citation Aliases
+\newcommand{\ccvcitation}[1]{[#1]}
+% TODO: CCV references should be created as citation aliases of the bibtex entries here.
+\defcitealias{me2016}{\ccvcitation{C1}}
+
+% Acronyms
+\include{glossary}
+\usepackage{cleveref}
+
+%% ----------
+%% Set the title of the document in the PDF's metadata
+%% ----------
+\hypersetup{%
+  pdftitle = {NSERC Discovery Research Proposal}
+}
+
+\newcounter{objectivecounter}
+\renewcommand{\theobjectivecounter}{\arabic{objectivecounter}}
+
+\newenvironment{objective}[2]{%
+\refstepcounter{objectivecounter}%
+\label{#1}%
+\noindent\textbf{Objective~\theobjectivecounter~[O\theobjectivecounter]: \textbf{#2}.}%
+}%
+{}%
+
+\usepackage{subfiles}
+
+\begin{document}
+\title{Proposal Title}
+
+% See https://www.nserc-crsng.gc.ca/ResearchPortal-PortailDeRecherche/Instructions-Instructions/DG-SD_eng.asp
+
+%% ----------
+%% Set start page number of the document. Change this depending on
+%% the part you are writing, and its position relative to the rest of
+%% the application.
+%% ----------
+\maketitle
+
+% 3000 characters maximum
+\section{Summary of Proposal}
+\subfile{summary_of_proposal}
+\clearpage
+
+% 3000 characters maximum
+\section{DND Statement of Relevance}
+\subfile{dnd_relevance}
+\clearpage
+
+% 12000 characters maximum
+\setcounter{page}{1}
+\section{Relationship to Other Research Support}
+\subfile{relationship_to_other_funding}
+\clearpage
+
+% 9000 characters maximum
+\setcounter{page}{1}
+\section{HQP Training Plan}
+\subfile{hqp_training_plan}
+\clearpage
+
+% 6000 characters maximum
+\setcounter{page}{1}
+\section{Past Contributions to HQP Training}
+\subfile{past_contributions_to_hqp}
+\clearpage
+
+% 9000 characters maximum
+\setcounter{page}{1}
+\section{Most Significant Research Contributions}
+\subfile{most_significant_contributions}
+\clearpage
+
+% 3000 characters maximum
+\setcounter{page}{1}
+\section{Additional Information on Contributions}
+\subfile{additional_information_contributions}
+\clearpage
+
+% Your file must meet the following specifications:
+% PDF format (.pdf extension); unprotected
+% Maximum file size of 10 mb
+% 8 ½" x 11" (216 mm x 279 mm) or A4 (210 mm x 297 mm)
+% Maximum 5 pages
+\setcounter{page}{1}
+\section{Your Proposal Title}
+\subfile{proposal}
+\clearpage
+
+% PDF format (.pdf extension); unprotected
+% Maximum file size of 10 mb
+% 8 ½" x 11" (216 mm x 279 mm) or A4 (210 mm x 297 mm)
+% Maximum 2 pages
+\setcounter{page}{1}
+\section{Budget Justification}
+\subfile{budget_justification}
+%
+\clearpage
+%
+% OPTIONAL Leaves of Absence + Supplemental Contributions
+% PDF format (.pdf extension); unprotected
+% Maximum file size of 10 mb
+% 8 ½" x 11" (216 mm x 279 mm) or A4 (210 mm x 297 mm)
+% Maximum 2 pages
+\setcounter{page}{1}
+\section{Leaves of Absence: Supplemental Contributions}
+\subfile{leaves_of_absense}
+\clearpage
+%
+% OPTIONAL
+% PDF format (.pdf extension); unprotected
+% Maximum file size of 10 mb
+% 8 ½" x 11" (216 mm x 279 mm) or A4 (210 mm x 297 mm)
+% \section{Other Support Sources (Abstracts, Budgets)}
+%
+% PDF format (.pdf extension); unprotected
+% Maximum file size of 10 mb
+% 8 ½" x 11" (216 mm x 279 mm) or A4 (210 mm x 297 mm)
+% Maximum 2 pages
+% 
+% References
+\pagestyle{plain}
+\setcounter{page}{1}
+% \section{References}
+% Please note, references of the form \ccvcitation{C$N$}, \ccvcitation{J$N$}, or \ccvcitation{R$N$} refer to Conference, Journal or Technical Report \#$N$ respectively within the attached Canadian Common C.V.'s list of publications.
+% 
+% This is to solve problem of the initial space after first section, even though it's in the left margin!
+% \AtNextBibliography{\small}%
+\setlength\bibitemsep{0\baselineskip}
+\subfile{proposal_references}
+
+\end{document}

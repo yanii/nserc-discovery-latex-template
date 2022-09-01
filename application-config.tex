@@ -1,3 +1,4 @@
+% !TEX root = main.tex
 %% -----------------------------------------------------
 %% Configuration of an NSERC application
 %% Defines a few macros that are global to all documents of the application
@@ -5,18 +6,19 @@
 
 %% If your application involves a company, put the name of the company
 %% in a macro rather than writing it directly.
-\newcommand{\namecompany}{Temporal inc.}
+\newcommand{\namecompany}{University of X}
 
 %% Application year. Only appears in the metadata of the generated PDF.
-\newcommand{\applicationyear}{2018}
+\newcommand{\applicationyear}{20XX}
 
 %% The list of all authors of the application. Again, only useful for the
 %% PDF metadata
-\newcommand{\authorlist}{Emmett Brown}
+\newcommand{\authorlist}{Your Name}
 
 %% The name and NSERC PIN of the main applicant
-\nsercname{Emmett Brown}
-\nsercpin{999999}
+\nsercname{Your Name}
+\nsercpin{NSERCPIN}
+\nserctitle{NSERC Discovery Proposal: Your Title}
 
 %% Documents are not dated
 \date{}
@@ -33,22 +35,22 @@
 %% Loading a few packages. These are all optional and can be commented
 %% out if you with. Feel free to add others.
 %% ----------
-\usepackage{hyperref}
-\hypersetup{%
-  pdfauthor = {\authorlist{}},
-  pdfcreator = {NSERC LaTeX Template V1.4},
-  pdfsubject = {NSERC \applicationyear{} \namecompany{}}
-}
-\usepackage{url}
+% \usepackage{hyperref}
+% \hypersetup{%
+%   pdfauthor = {\authorlist{}},
+%   pdfcreator = {LaTeX},
+%   pdfsubject = {NSERC Discovery Application\applicationyear{} \namecompany{}}
+% }
+% \usepackage{url}
 \usepackage{xcolor}
-\usepackage{todonotes}
-\usepackage{comment}
+% \usepackage{todonotes}
+% \usepackage{comment}
 
 %% Useful: a few "todo" macros to display colored boxes with remarks
 %% and comments
-\newcommand{\todoemmett}[1]{\todo[inline,caption={},color=cyan]{\sf\small Emmett: #1}}
-\newcommand{\todomarty}[1]{\todo[inline,caption={},color=pink]{\sf\small Marty: #1}}
-\newcommand{\todoall}[1]{\todo[inline,caption={},color=yellow]{\sf\small #1}}
+% \newcommand{\todo}[1]{\todo[inline,caption={},color=cyan]{\sf\small TODO: #1}}
+% \newcommand{\todomarty}[1]{\todo[inline,caption={},color=pink]{\sf\small Marty: #1}}
+% \newcommand{\todoall}[1]{\todo[inline,caption={},color=yellow]{\sf\small #1}}
 
 %% This will print a "DRAFT" watermark on all pages.
 %% Uncomment the next two lines once the application is ready.

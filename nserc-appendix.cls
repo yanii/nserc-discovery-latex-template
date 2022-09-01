@@ -39,23 +39,26 @@
   \PassOptionsToClass{\CurrentOption}{article}%
 }
 \ProcessOptions
-\ifx\pdfoutput\undefined
-  \LoadClass[letterpaper,onecolumn,dvips]{article}
-\else
-  \LoadClass[letterpaper,onecolumn,pdftex]{article}
-\fi
-\RequirePackage[sort,square,numbers]{natbib} %% Format bibliography
+\LoadClass[letterpaper,onecolumn]{article}
+
+% \RequirePackage[sort,square,numbers]{natbib} %% Format bibliography
 \RequirePackage[utf8]{inputenc}       %% Use UTF-8 in input files
 \RequirePackage{lastpage}             %% To get number of last page
 \RequirePackage[T1]{fontenc}          %% Type-1 font encoding
 \RequirePackage{microtype}            %% Better handling of typo
-\RequirePackage{fourier}              %% Sans-serif heading font
-\RequirePackage{berasans}             %% Serif text font
+% \RequirePackage{fourier}              %% Sans-serif heading font
+% \RequirePackage{berasans}             %% Serif text font
+\RequirePackage{mathptmx}
 \RequirePackage{fancyhdr}             %% Define header/footer
 \RequirePackage{geometry}             %% Change page margins
 \RequirePackage{ifthen}               %% Required to evaluate conditions
 \RequirePackage[normalem]{ulem}       %% For non-ugly underlining
-\RequirePackage[calcwidth]{titlesec}
+\RequirePackage[calcwidth,compact,explicit]{titlesec}
+\RequirePackage{csquotes}
+\RequirePackage[hidelinks,hyperindex,plainpages=false,unicode]{hyperref}
+% \usepackage{nohyperref}  % This makes hyperref commands do nothing without errors
+% \usepackage{url}  % This makes \url work
+% \pdfcompresslevel=9
 
 %% Prevents heading and single lines to be split across pages
 \widowpenalty=1000
@@ -64,6 +67,7 @@
 %% Get parameters passed at package instantiation
 \newcommand{\nsercname}[1]{\def\@nname{#1}}
 \newcommand{\nsercpin}[1]{\def\@npin{#1}}
+\newcommand{\nserctitle}[1]{\def\@ntitle{#1}}
 
 %% Get commands to space section titles
 \def\@sectspacing{10pt}
@@ -87,7 +91,7 @@
 %% Set headers and footers
 \fancypagestyle{plain}{%
 \fancyhf{}
-\fancyhead[L]{\footnotesize Page \thepage}%/\pageref{LastPage}}
+\fancyhead[L]{\footnotesize Page \thepage~$\bullet$~\@ntitle}%/\pageref{LastPage}} %  \sectionmark
 \fancyhead[R]{\footnotesize \@nname~$\bullet$~\@npin}
 \renewcommand{\footrulewidth}{0pt}
 \renewcommand{\headrulewidth}{0.4pt}%
@@ -96,19 +100,21 @@
 %% Redefine title
 \renewcommand\maketitle{%
 \pagestyle{plain}
-{\noindent\sf\bfseries\Large\@title}
+{\noindent\bfseries\Large\@title}
 \vskip 8pt
 }
 
 %% Redefine section heading
-\titleformat{\section}{\sf\bfseries}{\thesection.\quad}{0pt}{}{}
+% \titleformat{\section}{\Large\bfseries}{\thesection.\quad}{0pt}{#1} % for numbering
+\titleformat{\section}{\Large\bfseries}{}{0em}{#1}
 
 %% Redefine sub-section heading
-\renewcommand\thesubsection{\alph{subsection})}
-\titleformat{\subsection}[block]{}{\thesubsection}{.5em}{}[\vspace{-2em}\rule{\titlewidth}{0.75pt}]
+% \renewcommand\thesubsection{\Alph{subsection})}
+% \titleformat{\subsection}[block]{\normalfont\bfseries}{\thesubsection}{.5em}{\uline{#1}} % for numbering
+\titleformat{\subsection}[block]{\normalfont\bfseries}{}{0em}{\uline{#1}}
 
 %% Redefine paragraph
-\titleformat{\paragraph}[runin]{\bfseries}{\quad}{0pt}{}{}
+\titleformat{\paragraph}[runin]{\normalfont\bfseries}{\quad}{0em}{#1}
 
 %% ------------------------------
 %% New: subsubsubsection
@@ -121,13 +127,13 @@
 %% So that the bibliography environment in the document
 %% uses the proper heading
 %% ------------------------------
-\renewcommand\bibsection{\section*{\refname}}
+% \renewcommand\bibsection{\section*{\refname}}
 
-% Hack: to compress bibitems
-\makeatletter
-\newcommand{\oldbibitem}[2][]{}
-\let\oldbibitem\bibitem
-\renewcommand{\bibitem}[2][]{\oldbibitem[#1]{#2} \vskip -4pt}
-\makeatother
+% % Hack: to compress bibitems
+% \makeatletter
+% \newcommand{\oldbibitem}[2][]{}
+% \let\oldbibitem\bibitem
+% \renewcommand{\bibitem}[2][]{\oldbibitem[#1]{#2} \vskip -4pt}
+% \makeatother
 
 %% :mode=latex:wrap=none:
