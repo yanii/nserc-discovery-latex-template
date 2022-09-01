@@ -42,4 +42,4 @@ Note that I made up this class for my own personal use; I don't mind sharing it,
 About the author
 ----------------
 
-This template was created by [Yani Ioannou](https://yani.ai), Assistant Professor at the [University of Calgary](https//www.ucalgary.ca), forked from the template and based on the LaTeX class designed by [Sylvain Hallé](http://leduotang.ca/sylvain).
+This template was created by [Yani Ioannou](https://yani.ai), Assistant Professor at the [University of Calgary](https//www.ucalgary.ca), forked from the template and based on the LaTeX class designed by [Sylvain Hallé](http://leduotang.ca/sylvain). Also used is the pagebreak Lua script distributed with PanDoc by Benct Philip Jonsson and Albert Krewinkel, which can be found [here](https://github.com/pandoc/lua-filters/blob/master/pagebreak/pagebreak.lua).
