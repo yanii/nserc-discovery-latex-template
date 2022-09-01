@@ -6,6 +6,8 @@
 *.tmp
 *.bak
 *.out
+*.fls
+*.fdb_latexmk
 *~
 \#*
 *\#
