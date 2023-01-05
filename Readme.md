@@ -1,7 +1,7 @@
 A XeLaTeX template for NSERC-style documents
 ==========================================
 
-## Why XeLaTex?
+## Why XeLaTeC?
 
 You have to use XeLaTeX to use the exact font required by NSERC (i.e. the real TrueType Times New Roman font). If you and your reviewers are less fussy, you may get away with using the standard LaTeX times font.
 ## Requirements for Makefile
