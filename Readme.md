@@ -37,7 +37,9 @@ You will then be able to reference the CCV bibliography entry using
 `\citetalias{me2016}`
 
 ## Support/Any Issues
-Note that I made up this class for my own personal use; I don't mind sharing it, but please don't contact me for support. I'm also not responsible if you are not awarded a grant due to any issues with this template. NSERC Discovery Grant requirements can change every year, and you should check the posted requirements the year you apply. Saying this, this template is what I used for my successful Discovery Grant application in 2021.
+Note that I made up this class for my own personal use; I don't mind sharing it, but please don't contact me for personal support. Saying that, I'm happy to receive/consider any reasonable pull requests. 
+
+Please be aware that I accept no responsibility if you are not awarded a grant due to any issues with this template. NSERC Discovery Grant requirements can change every year, and you should check the posted requirements the year you apply. Saying this, this template is what I used for my successful Discovery Grant application in 2021.
 
 About the author
 ----------------
